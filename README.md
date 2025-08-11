@@ -24,24 +24,24 @@ It includes database creation, data validation, and analytical queries to extrac
 
 ## 📊 Queries Included
 
-### **Data Setup**
+# **Data Setup**
 
-CREATE DATABASE proj_1;
-USE proj_1;
-
-CREATE TABLE retail_sales (
-    transactions_id INT PRIMARY KEY,
-    sale_date DATE,
-    sale_time TIME,
-    customer_id INT,
-    gender VARCHAR(15),
-    age INT,
-    category VARCHAR(25),
-    quantiy INT,
-    price_per_unit FLOAT,
-    cogs FLOAT,
-    total_sale FLOAT
-);
+  CREATE DATABASE proj_1;
+  USE proj_1;
+  
+  CREATE TABLE retail_sales (
+      transactions_id INT PRIMARY KEY,
+      sale_date DATE,
+      sale_time TIME,
+      customer_id INT,
+      gender VARCHAR(15),
+      age INT,
+      category VARCHAR(25),
+      quantiy INT,
+      price_per_unit FLOAT,
+      cogs FLOAT,
+      total_sale FLOAT
+  );
 
 ## Data Validation
 
