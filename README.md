@@ -157,7 +157,13 @@ SELECT
         WHEN EXTRACT(HOUR FROM sale_time) BETWEEN 12 AND 17 THEN 'Afternoon'
         WHEN EXTRACT(HOUR FROM sale_time) BETWEEN 18 AND 22 THEN 'Evening'
         ELSE 'Night'
+    END AS shift,
+COUNT(transactions_id) AS total_sales
+FROM retail_sales
+GROUP BY shift
+ORDER BY total_sales ASC;
 ```
+
 
 ## 🚀 How to Run
     Create the database and table using the provided CREATE TABLE script.
@@ -174,9 +180,4 @@ SELECT
     📧 rohansardesai04@gmail.com
     📱 +91 9022228467
 
-    END AS shift,
-    COUNT(transactions_id) AS total_sales
-FROM retail_sales
-GROUP BY shift
-ORDER BY total_sales ASC;
-```
+
