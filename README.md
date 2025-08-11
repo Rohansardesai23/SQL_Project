@@ -157,6 +157,23 @@ SELECT
         WHEN EXTRACT(HOUR FROM sale_time) BETWEEN 12 AND 17 THEN 'Afternoon'
         WHEN EXTRACT(HOUR FROM sale_time) BETWEEN 18 AND 22 THEN 'Evening'
         ELSE 'Night'
+```
+
+## 🚀 How to Run
+    Create the database and table using the provided CREATE TABLE script.
+    Load your retail sales dataset into the table.
+    Run the analytical queries to extract insights.
+
+## 🛠 Requirements
+    MySQL 8+ (or any SQL-compatible database supporting EXTRACT() function)
+    Retail sales dataset in CSV or SQL format
+
+
+## 👨‍💻 Author
+    Rohan Sunil Sardesai
+    📧 rohansardesai04@gmail.com
+    📱 +91 9022228467
+
     END AS shift,
     COUNT(transactions_id) AS total_sales
 FROM retail_sales
