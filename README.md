@@ -77,62 +77,52 @@ WHERE transactions_id IS NULL
 
 ## 🔍 Analytical Queries
 
-###Q1. Retrieve all sales made on 2022-11-05:
+### Q1. Retrieve all sales made on 2022-11-05:
 ```sql
-Copy
-Edit
 SELECT *
 FROM retail_sales
 WHERE sale_date = '2022-11-05';
 ```
 
-Q2. Clothing category sales (quantity ≥ 4) in Nov-2022:
-
-sql
-Copy
-Edit
+### Q2. Clothing category sales (quantity ≥ 4) in Nov-2022:
+``` sql
 SELECT *
 FROM retail_sales
 WHERE category = 'Clothing'
   AND quantiy >= 4
   AND sale_date BETWEEN '2022-11-01' AND '2022-11-30';
-Q3. Total sales per category:
+```
 
-sql
-Copy
-Edit
+### Q3. Total sales per category:
+```sql
 SELECT category, SUM(total_sale) AS total_sales
 FROM retail_sales
 GROUP BY category;
-Q4. Average age of customers in 'Beauty' category:
+```
 
-sql
-Copy
-Edit
+### Q4. Average age of customers in 'Beauty' category:
+```sql
 SELECT AVG(age) AS average_age_of_customer, category
 FROM retail_sales
 WHERE category = 'Beauty';
-Q5. Transactions with total sale > 1000:
+```
 
-sql
-Copy
-Edit
+### Q5. Transactions with total sale > 1000:
+```sql
 SELECT *
 FROM retail_sales
 WHERE total_sale > 1000;
-Q6. Transactions by gender in each category:
+```
 
-sql
-Copy
-Edit
+### Q6. Transactions by gender in each category:
+```sql
 SELECT category, gender, COUNT(transactions_id) AS total_transactions
 FROM retail_sales 
 GROUP BY category, gender;
-Q7. Average monthly sales & best-selling month per year:
+```
 
-sql
-Copy
-Edit
+### Q7. Average monthly sales & best-selling month per year:
+```sql
 SELECT 
     YEAR(sale_date) AS year, 
     MONTH(sale_date) AS month, 
@@ -141,29 +131,26 @@ FROM retail_sales
 GROUP BY year, month
 ORDER BY avg_sales DESC
 LIMIT 2;
-Q8. Top 5 customers by total sales:
+```
 
-sql
-Copy
-Edit
+### Q8. Top 5 customers by total sales:
+```sql
 SELECT SUM(total_sale) AS total_sales, customer_id
 FROM retail_sales
 GROUP BY customer_id
 ORDER BY total_sales DESC
 LIMIT 5;
-Q9. Unique customers per category:
+```
 
-sql
-Copy
-Edit
+### Q9. Unique customers per category:
+```sql
 SELECT COUNT(DISTINCT customer_id) AS unique_customers, category
 FROM retail_sales
 GROUP BY category;
-Q10. Shift-based order counts:
+```
 
-sql
-Copy
-Edit
+### Q10. Shift-based order counts:
+```sql
 SELECT 
     CASE 
         WHEN EXTRACT(HOUR FROM sale_time) BETWEEN 6 AND 11 THEN 'Morning'
@@ -175,3 +162,4 @@ SELECT
 FROM retail_sales
 GROUP BY shift
 ORDER BY total_sales ASC;
+```
