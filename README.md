@@ -44,25 +44,20 @@ CREATE TABLE retail_sales (
     cogs FLOAT,
     total_sale FLOAT
 );
+```
+---
 
 ## Data Validation
-View first rows:
 
-sql
-Copy
-Edit
+```sql
+
 SELECT * FROM retail_sales LIMIT 10;
 Count total rows:
 
-sql
-Copy
 Edit
 SELECT COUNT(*) FROM retail_sales;
 Check for null values:
 
-sql
-Copy
-Edit
 SELECT * FROM retail_sales
 WHERE transactions_id IS NULL
    OR sale_date IS NULL
@@ -75,17 +70,22 @@ WHERE transactions_id IS NULL
    OR price_per_unit IS NULL
    OR cogs IS NULL
    OR total_sale IS NULL;
+```
+
+---
 
 
 ## 🔍 Analytical Queries
-Q1. Retrieve all sales made on 2022-11-05:
 
-sql
+###Q1. Retrieve all sales made on 2022-11-05:
+```sql
 Copy
 Edit
 SELECT *
 FROM retail_sales
 WHERE sale_date = '2022-11-05';
+```
+
 Q2. Clothing category sales (quantity ≥ 4) in Nov-2022:
 
 sql
