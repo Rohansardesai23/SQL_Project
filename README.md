@@ -5,6 +5,23 @@ It includes database creation, data validation, and analytical queries to extrac
 
 ---
 
+## 📌 About
+This project focuses on **retail sales data analysis using SQL**.  
+The goal is to explore, clean, and analyze sales data to uncover useful business insights.  
+It includes database creation, validation queries, and analytical queries that help answer real-world business questions.
+
+## 🎯 Key Objectives
+- Create and manage a retail sales database.
+- Perform data validation and quality checks.
+- Analyze sales by date, category, and customer.
+- Identify top-selling products and loyal customers.
+- Understand trends using shift-based and high-value sales queries.
+
+## 🛠️ Tools & Technologies
+- SQL (MySQL/PostgreSQL/SQLite)
+- GitHub for version control
+
+---
 ## 📂 Project Structure
 
 - **Database:** `proj_1`
